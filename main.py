@@ -1,3 +1,7 @@
+# This is my solution to Sofixit's Code Wars competition
+# The function itselt is located in 'material.py' file
+# Maciej Kmieciak
+
 from material import material
 
 test_cases = [
@@ -19,6 +23,11 @@ test_cases = [
     [1, 2, 'abc'],
     [1, 0, 2, -3]
 ]
+
+print("This is my solution to Sofixit's Code Wars competition")
+print("The function itselt is located in 'material.py' file")
+print("Maciej Kmieciak")
+print()
 
 for test_case in test_cases:
     print("Test case:", test_case)
