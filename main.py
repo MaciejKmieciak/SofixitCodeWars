@@ -1,5 +1,5 @@
 # This is my solution to Sofixit's Code Wars competition
-# The function itselt is located in 'material.py' file
+# The function itself is located in 'material.py' file
 # Maciej Kmieciak
 
 from material import material
