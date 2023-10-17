@@ -1,3 +1,8 @@
+# This is my solution to Sofixit's Code Wars competition
+# Test cases are located in 'main.py' file
+# Maciej Kmieciak
+
+
 def material(spaceship):
     # Check whether given argument is a list
     if isinstance(spaceship, list):
@@ -10,18 +15,19 @@ def material(spaceship):
         # Raise exception if not a list
         raise ValueError('material() error: argument is not a list')
 
-    # Check whether all elements of the list are non-negative
-    if min(spaceship) < 0:
-        raise ValueError('material() error: elements of the list cannot be negative')
-
-    # Initialize material amount - this is the number to be returned
+    # Initialize material_amount - this is the number to be returned
     material_amount = 0
 
+    # The length of the list for later multiple use
     len_spaceship = len(spaceship)
 
     # In case the list is empty, no material can be placed
     if len_spaceship == 0:
         return material_amount
+
+    # Check whether all elements of the list are non-negative
+    if min(spaceship) < 0:
+        raise ValueError('material() error: elements of the list cannot be negative')
 
     max_level = max(spaceship)
 
@@ -40,11 +46,6 @@ def material(spaceship):
                 left_index_limit = i
                 break
 
-        # In case no such index is found,
-        # there is no more space to fill.
-        if left_index_limit is None:
-            return material_amount
-
         # Similarly for the right index limit
         for i in range(len_spaceship):
             if spaceship[len_spaceship - (i + 1)] >= current_level:
@@ -61,3 +62,4 @@ def material(spaceship):
 
     # At this point all possible levels to fill have been covered
     return material_amount
+
