@@ -26,17 +26,18 @@ def material(spaceship):
         return material_amount
 
     # Check whether all elements of the list are non-negative
-    if min(spaceship) < 0:
-        raise ValueError('material() error: elements of the list cannot be negative')
+    for i in spaceship:
+        if i < 0:
+            raise ValueError('material() error: elements of the list cannot be negative')
 
     max_level = max(spaceship)
+
+    left_index_limit = None
+    right_index_limit = None
 
     # For each horizontal level of given spaceship,
     # up to the highest level which still has boxes
     for current_level in range(1, max_level + 1):
-
-        left_index_limit = None
-        right_index_limit = None
 
         # Find the left index limit for current level
         # i.e. the first element in the list,
@@ -62,4 +63,3 @@ def material(spaceship):
 
     # At this point all possible levels to fill have been covered
     return material_amount
-
