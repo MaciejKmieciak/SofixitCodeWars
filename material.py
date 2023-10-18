@@ -48,9 +48,9 @@ def material(spaceship):
                 break
 
         # Similarly for the right index limit
-        for i in range(len_spaceship):
-            if spaceship[len_spaceship - (i + 1)] >= current_level:
-                right_index_limit = len_spaceship - (i + 1)
+        for i in range(len_spaceship - 1, left_index_limit - 1, -1):
+            if spaceship[i] >= current_level:
+                right_index_limit = i
                 break
 
         # Fill all the empty space in between with material
